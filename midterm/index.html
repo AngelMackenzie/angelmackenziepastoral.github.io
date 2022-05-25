@@ -10,12 +10,12 @@
     window.onload = function() {
         AFRAME.registerComponent('event-listener', {
             init: function () {
-                this.audio = document.querySelector("#roar");
+                this.audio = document.querySelector("#dance");
 
                 this.el.addEventListener('click', function (e) {
 		
-                    let dragon = document.querySelector('#dragon-model')
-		    dragon.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let girl = document.querySelector('#girl-model')
+		    girl.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			
                   console.log(e)
@@ -37,8 +37,8 @@
                 }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
 		
-                    let dragon = document.querySelector('#dragon-model')
-		    dragon.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let girl = document.querySelector('#girl-model')
+		    girl.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
@@ -50,8 +50,8 @@
 		
                 this.el.addEventListener('animation-finished', function (e) {
 			 console.log(e)
-                    let dragon = document.querySelector('#dragon-model')
-		    dragon.removeAttribute('animation-mixer');
+                    let girl = document.querySelector('#girl-model')
+		    girl.removeAttribute('animation-mixer');
                 }.bind(this));
 		
             }
@@ -63,17 +63,17 @@
   <body style="margin: 0; overflow: hidden;">
     <a-scene renderer="colorManagement: true">
        <a-assets>
-        <a-asset-item id="dragon" response-type="arraybuffer" src="./dragon.glb"></a-asset-item>
-        <audio id="roar" src="./assets/roar.wav"></audio>
+        <a-asset-item id="girl" response-type="arraybuffer" src="./girl.glb"></a-asset-item>
+        <audio id="dance" src="./assets/dance.wav"></audio>
       </a-assets>
-      <a-entity event-listener id="dragon-model"  
-        gltf-model="#dragon" 
+      <a-entity event-listener id="girl-model"  
+        gltf-model="#girl" 
         scale=".5 .5 .5" 
         position = "0 0 -5" 
         rotation="0 0 0" 
       >
       </a-entity>
-      <a-sound src="#roar" autoplay="false"></a-sound>
+      <a-sound src="#dance" autoplay="false"></a-sound>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
       <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
     </a-scene>

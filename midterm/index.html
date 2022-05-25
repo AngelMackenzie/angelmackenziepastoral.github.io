@@ -15,7 +15,7 @@
                 this.el.addEventListener('click', function (e) {
 		
                     let girl = document.querySelector('#girl-model')
-		    girl.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+		    girl.setAttribute('animation-mixer', "clip: mixamo.com; loop: once;");
                     this.audio.play();
 			
                   console.log(e)
@@ -38,7 +38,7 @@
                 this.el.addEventListener('touchstart', function (e) {
 		
                     let girl = document.querySelector('#girl-model')
-		    girl.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+		    girl.setAttribute('animation-mixer', "clip: mixamo.com; loop: once;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
@@ -76,7 +76,7 @@
       <a-sound src="#dance" autoplay="false"></a-sound>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
       <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
-    </a-scene>
+    </a-mixamo.com>
 
   </body>
 </html>
